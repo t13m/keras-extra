@@ -100,7 +100,7 @@ class TimeDistributedConvolution2D(Layer):
             raise Exception('Invalid dim_ordering: ' + self.dim_ordering)
         self.W = self.init(self.W_shape)
         self.b = K.zeros((self.nb_filter,))
-        self.params = [self.W, self.b]
+        self.trainable_weights = [self.W, self.b]
         self.regularizers = []
 
         if self.W_regularizer:
